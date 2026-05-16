@@ -3,60 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Google</title>
+    <title>Sonbank Login</title>
 
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
     <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
         body{
-            font-family: Arial;
-            background: #111827;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background:#0f172a;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
         }
 
-        .box{
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            width: 300px;
-            box-shadow: 0 0 20px rgba(0,0,0,.3);
+        .login-box{
+            background:#1e293b;
+            padding:40px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 0 20px rgba(0,0,0,0.5);
+            width:350px;
         }
 
-        h2{
-            margin-bottom: 20px;
+        h1{
+            color:gold;
+            margin-bottom:10px;
+        }
+
+        p{
+            color:#cbd5e1;
+            margin-bottom:20px;
         }
     </style>
 </head>
 <body>
 
-<div class="box">
-    <h2>Đăng nhập Google</h2>
+<div class="login-box">
+    <h1>SONBANK.BET</h1>
+    <p>Đăng nhập bằng Google</p>
 
     <div id="g_id_onload"
-         data-client_id="DAN_CLIENT_ID_O_DAY"
-         data-callback="handleCredentialResponse">
+         data-client_id="806374824104-7r4s4huq42a8p7thdfckchfet07rce9f.apps.googleusercontent.com"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false">
     </div>
 
     <div class="g_id_signin"
          data-type="standard"
          data-size="large"
          data-theme="filled_blue"
-         data-text="signin_with">
+         data-text="signin_with"
+         data-shape="pill"
+         data-logo_alignment="left">
     </div>
 </div>
 
 <script>
 function handleCredentialResponse(response) {
-    alert("Đăng nhập thành công!");
 
     console.log(response);
 
-    // chuyển trang sau khi login
-    window.location.href = "index.html";
+    alert("Đăng nhập thành công!");
+
+    // Chuyển trang sau khi login
+    window.location.href = "https://google.com";
 }
 </script>
 
