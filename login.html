@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Google</title>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <style>
+        body{
+            font-family: Arial;
+            background: #111827;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box{
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 0 20px rgba(0,0,0,.3);
+        }
+
+        h2{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Đăng nhập Google</h2>
+
+    <div id="g_id_onload"
+         data-client_id="DAN_CLIENT_ID_O_DAY"
+         data-callback="handleCredentialResponse">
+    </div>
+
+    <div class="g_id_signin"
+         data-type="standard"
+         data-size="large"
+         data-theme="filled_blue"
+         data-text="signin_with">
+    </div>
+</div>
+
+<script>
+function handleCredentialResponse(response) {
+    alert("Đăng nhập thành công!");
+
+    console.log(response);
+
+    // chuyển trang sau khi login
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
